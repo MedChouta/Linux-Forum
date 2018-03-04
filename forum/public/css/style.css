@@ -1,0 +1,86 @@
+body{
+	margin: auto;
+}
+
+#navBar{
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 100px;
+}
+
+img[alt="logo: tux"]{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 100px;
+	top: 0px;
+}
+
+li{
+	padding-right: 30px;
+	font-size: 1.15em;
+	font-family: Arial;
+	color: #eaebed;
+}
+
+header{
+	position: sticky;
+	top: 0px;
+	height: 50px;
+	background-color: #494c51;
+	border: 1px solid #494c51;
+}
+
+#post{
+	text-align: justify;
+	width: 30%;
+	margin: auto;
+	margin-top: 20px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#postTitle{
+	text-align: center;
+	text-decoration: underline;
+}
+
+#comment{
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+input[type="text"]{
+	margin: 10px;
+}
+
+span{
+	float: right;
+	font-weight: bold;
+}
+
+.postLink:hover{
+	color: #424246;
+}
+
+.postLink:visited, .postLink{
+	color: black;
+}
+
+p, h2{
+	font-family: Ubuntu, Arial;
+}
+
+#form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+textarea{
+	width: 300px;
+	height: 100px;
+}
