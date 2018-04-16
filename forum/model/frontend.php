@@ -15,7 +15,7 @@ function getPosts(){
 
 	$db = dbConnect();
 
-	$posts = $db->query('SELECT id, author, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y at %Hh-%imin-%ss\') AS creation_date FROM posts ORDER BY creation_date DESC LIMIT 0,10');
+	$posts = $db->query('SELECT id, author, title, content, category,DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date FROM posts ORDER BY creation_date DESC LIMIT 0,10');
 
 	return $posts;
 }
@@ -23,7 +23,7 @@ function getPosts(){
 function getPost($id){
 	$db = dbConnect();
 
-	$post = $db->prepare('SELECT id, author, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y at %Hh-%imin-%ss\') AS creation_date FROM posts WHERE id=?');
+	$post = $db->prepare('SELECT id, author, title, content,DATE_FORMAT(creation_date, \'%d/%m/%Y at %Hh-%imin-%ss\') AS creation_date FROM posts WHERE id=?');
 	$post->execute(array($id));
 
 	return $post;
@@ -51,4 +51,15 @@ function addPost($author, $content, $title){
 
 	$post = $db->prepare('INSERT INTO posts(author, content, title, creation_date) VALUES(?, ?, ?, NOW())');
 	$post->execute(array($author, $content, $title));
+}
+
+function addUser($familyName, $firstName, $UserName, $email, $password){
+	$db = dbConnect();
+
+	$user = $db->prepare('INSERT INTO users(familyName, firstName, UserName, email, password, signUpDate) VALUES(?, ?, ?, ?, ?,NOW())');
+	$user->execute(array($familyName, $firstName, $UserName, $email, $password));
+}
+
+function login(){
+
 }

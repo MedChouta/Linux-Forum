@@ -1,86 +1,161 @@
-body{
+html,body{
 	margin: auto;
+	font-family: sans-serif;
 }
 
-#navBar{
-	list-style-type: none;
-	display: flex;
-	justify-content: flex-end;
-	margin-right: 100px;
-}
-
-img[alt="logo: tux"]{
-	width: 50px;
-	height: 50px;
-	position: absolute;
-	left: 100px;
-	top: 0px;
-}
-
-li{
-	padding-right: 30px;
-	font-size: 1.15em;
-	font-family: Arial;
-	color: #eaebed;
-}
+/* NAVBAR */
 
 header{
 	position: sticky;
 	top: 0px;
-	height: 50px;
-	background-color: #494c51;
-	border: 1px solid #494c51;
+}
+#tux_img{
+	width: 3em;
+	height: 3em;
 }
 
-#post{
-	text-align: justify;
+#tux-li{
+	margin-left: 5%;
+}
+
+.navBar{
+	background-color: #37383a;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+}
+
+.sections{
+	display: flex;
 	width: 30%;
-	margin: auto;
-	margin-top: 20px;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	justify-content: space-between;
+	margin-right: 5%;
 }
 
-#postTitle{
-	text-align: center;
-	text-decoration: underline;
+li{
+	list-style: none;
+	font-family: 'Ubuntu';
+	color: #eaecef;
+	font-size: 1.1em;
 }
 
-#comment{
-	border: 1px solid black;
-	border-radius: 10px;
-	margin-top: 10px;
-	padding: 10px;
+li:hover:not(#tux-li){
+	border-bottom: 2px solid #eaecef;
+	cursor: pointer;
 }
 
-input[type="text"]{
-	margin: 10px;
+/* SignIn/LogIn */
+
+.sign{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10%;
+	padding-right: 10%;
+	box-shadow: 1px 1px 3.5px #5f5f5f;
+	background-color: white;
 }
 
-span{
-	float: right;
+.info-button{
+	border: none;
+	background-color: #31acea;
+	padding: 3px 3px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.forum-name{
+	font-size: 1.1em;
 	font-weight: bold;
+	font-family: 'IBM Plex Mono';
+	border-bottom: 2px solid black;
 }
 
-.postLink:hover{
-	color: #424246;
+/* QUESTIONS */
+
+#post-list{
+	margin-top: 1.5em;
 }
 
-.postLink:visited, .postLink{
+table{
+	margin: auto;
+	border-collapse: collapse;
+}
+
+th{
+	font-family: 'Ubuntu';
+	font-size: 1.4em;
+	border-bottom: 2px solid black;
+}
+
+.content{
+	margin-top: 20px;
+}
+
+.topic{
+	width: 60%;
+}
+
+.user{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+/* MODAL */
+.postLink{
+	text-decoration: none;
 	color: black;
 }
 
-p, h2{
-	font-family: Ubuntu, Arial;
+.postLink:hover{
+	color: #5f5f5f;
 }
 
-#form{
+.modal-container{
+	width: 28%;
+	background-color: blue;
+	font-family: sans-serif;
+	border: 1px solid black;
+	display: none;
+	z-index: 1;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+form{
+	transition: width 0.5s;
+	width: 80%;
+}
+
+.input{
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 }
 
-textarea{
-	width: 300px;
-	height: 100px;
+.title{
+}
+
+input{
+	border: none;
+	border-bottom: 2px solid #31acea;
+	width: 100px;
+	transition: width 0.5s;
+
+}
+
+input:focus{
+	outline: none;
+	width: 200px;
+}
+
+input:blur{
+	width: 100px;
 }
