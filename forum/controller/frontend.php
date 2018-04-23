@@ -1,26 +1,34 @@
 <?php 
 
-require('model/frontend.php');
+require('model/Manager.php');
+require('model/PostManager.php');
+require('model/CommentManager.php');
+require('model/UserManager.php');
 
 
 function listPosts(){
 
-	$posts = getPosts();
+	$posts = new PostManager();
+	$posts = $posts->getPosts();
 
 	require ('view/indexView.php');
 }
 
 function showPost($id){
 
-	$post = getPost($id);
-	$comments = getComments($id);
+	$post = new PostManager();
+	$post = $post->getPost($id);
+
+	$comments = new CommentManager();
+	$comments = $comments->getComments($id);
 
 	require('view/postView.php');
 }
 
 function postComment($id, $author, $content){
 
-	addComment($id, $author, $content);
+	$comments = new CommentManager();
+	$comments = $comments->addComment($id, $author, $content);
 
 	header('Location: index.php?page=post&id=' . $id);
 
@@ -28,7 +36,8 @@ function postComment($id, $author, $content){
 
 function post($author, $content, $title){
 
-	addPost($author, $content, $title);
+	$post = new PostManager();
+	$post->addPost($author, $content, $title);
 
 	header('Location: index.php?page=accueil');
 
