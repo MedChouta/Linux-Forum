@@ -42,3 +42,10 @@ function post($author, $content, $title){
 	header('Location: index.php?page=accueil');
 
 }
+
+function signUp($UserName, $email, $password){
+	$user = new UserManager();
+	$user->add($UserName, $email, $password);
+
+	header('Location: index.php?page=accueil');
+}

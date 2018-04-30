@@ -1,7 +1,7 @@
 <div class="background-modal">
 	<div class="modal-container">
 		<h2 class="title">Inscription</h2>
-		<form id="form" method="post" action="index.php?page=inscription">
+		<form id="form" method="post" action="index.php?page=signUp">
 			<p class="input">
 				<label for="userName">Nom d'utilisateur: </label>
 				<input type="text" id="userName" name="userName">
