@@ -1,49 +1,61 @@
-var button = document.querySelector('.signUp')
 var input = document.querySelectorAll('.input')
-var form = document.querySelector('form')
-var modal = document.querySelector('.background-modal')
-var modalContainer = document.querySelector('.modal-container')
-var speed = 10;
+var button = document.getElementsByClassName('signUp')
+var form = document.querySelectorAll('form')
 
-var Modal = {
-	display: "none",
-	toggle: function(status){
-					switch(status){
-						case "hide":
-							this.display = "none"
-							break;
-						case "show":
-							this.display = "block"
-							break;
-					}
-					modal.style.display = this.display
-				},
+class Modal{
 
-}
+	constructor(index){
+		this.index = index
+		this.display = "none"
+		self = this
+		
+		this.modal = document.querySelectorAll('.background-modal')
+		this.modalContainer = document.querySelectorAll('.modal-container')
+		this.opacity = 0
+		
+		requestAnimationFrame(self.fadeIn.bind(self))
 
-function fadeIn(){
-	Modal.toggle("show")
-	pos = parseFloat(getComputedStyle(modalContainer).top)
-	modalContainer.style.top = pos + speed + "px"
-	modalContainer.style.opacity = "1"
-	animationId = requestAnimationFrame(fadeIn)
-	
-	if(pos === 150){
-		cancelAnimationFrame(animationId)
+		this.modal[this.index].addEventListener('click', function(e){
+			requestAnimationFrame(self.fadeOut.bind(self))
+		})
+
+		this.modalContainer[this.index].addEventListener('click', function(e){
+			self.toggle("show")
+			e.stopPropagation()
+		})
+	}
+
+	toggle(status){
+		switch(status){
+			case "hide":
+				this.display = "none"
+				break;
+			case "show":
+					this.display = "block"
+					break;
+		}
+		this.modal[this.index].style.display = this.display
+	}
+
+	fadeIn(){
+		this.toggle("show")
+		this.modalContainer[this.index].classList.add("fadeIn");
+		this.modalContainer[this.index].style.opacity = "1";
+		console.log(this.modalContainer[this.index].style.opacity)
+	}
+
+	fadeOut(){
+		this.modalContainer[this.index].style.opacity -= 0.1
+		this.opacity = parseFloat(getComputedStyle(this.modalContainer[this.index]).opacity)
+		let animationId = requestAnimationFrame(this.fadeOut.bind(this))
+		if(this.opacity === 0){
+			cancelAnimationFrame(animationId)
+			console.log(this.opacity)
+			this.toggle("hide")
+		}
 	}
 }
 
-function fadeOut(){
-	pos = parseFloat(getComputedStyle(modalContainer).top)
-	modalContainer.style.top = pos - speed + "px"
-	modalContainer.style.opacity = "0"
-	animationId = requestAnimationFrame(fadeOut)
-	
-	if(pos === 0){
-		cancelAnimationFrame(animationId)
-		Modal.toggle("hide")
-	}
-}
 /***************************/
 function changeWidth(width){
 	form.style.width = width + '%'
@@ -60,20 +72,11 @@ for(var i = 0; i < input.length; i++)
 	})
 }
 
-/***************************/
 
-//Events
-button.addEventListener('click', function(){
-	requestAnimationFrame(fadeIn)
+button[0].addEventListener('click', function(){
+	new Modal(0)
 })
 
-modal.addEventListener('click', function(e){
-	requestAnimationFrame(fadeOut)
+button[1].addEventListener('click', function(){
+	new Modal(1)
 })
-
-modalContainer.addEventListener('click', function(e){
-	Modal.toggle("show")
-	e.stopPropagation()
-})
-
-//END-Events
