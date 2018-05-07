@@ -49,3 +49,7 @@ function signUp($UserName, $email, $password){
 
 	header('Location: index.php?page=accueil');
 }
+
+function showForm(){
+	require('view/ask.php');
+}

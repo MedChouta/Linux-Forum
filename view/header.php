@@ -14,8 +14,8 @@
 	<div class="sign">
 		<p class="forum-name">AskTux:</p>
 		<div>
-			<button class="info-button signUp">Inscription</button>
-			<button class="info-button">Connexion</button>
+			<button class="info-button signUp" onclick="fadeIn(modal[0], modalContainer[0])">Inscription</button>
+			<button class="info-button signUp" onclick="fadeIn(modal[1], modalContainer[1])">Connexion</button>
 		</div>
 	</div>
 </header>

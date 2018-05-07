@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 30, 2018 at 02:50 AM
+-- Generation Time: May 07, 2018 at 08:22 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -95,10 +95,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `UserName`, `email`, `password`, `signUpDate`) VALUES
 (3, 'DeMaHoM03', 'mohammedchouta10@gmail.com', 'd696bbebaca17c69f8a479e12d5f935445e12b58322853f20b2e8817dbabf304', '2018-04-17 23:58:52'),
-(7, 'dayday420', 'mohammedchouta@yahoo.fr', 'd0ad892c4b4c3ed68b2e423380c45cfee0f6bb06589de53be2813ba11ea01bf5ddc2bfd2e9b395d78ae3a2c9e0196f92795b720bae7cf25c18590bcff5157606', '2018-04-28 19:47:37'),
-(6, 'dingdong69', 'mohammedchouta10@gmail.com', 'c72fd9437ccc298e6bab5a532045cbbf860f5ee2f38b5fcd3c6b8e02417f84f0', '2018-04-28 19:41:12'),
-(8, 'dayday420', 'mohammedchouta@yahoo.fr', '8a4a6ebacd93d823f13f795df91575b3096caff2b4832195bf257c9797e222358f0953fb4f13643cae5f106371d3b5fed7a0bc5ef5a5b78a91d434b8ed2434b4', '2018-04-28 20:04:08'),
-(9, 'dayday420', 'mohammedchouta@yahoo.fr', 'efe2ded551d3d72d3c756e14b6eb7bd1d9b5a48446fef2d4fd27b54f879042dc42d38258048db27da007223d5d4517e4d8baa21842ff979c3a39cce16193abef', '2018-04-28 20:04:15'),
 (10, 'mohammed', 'd@dlkfjslkdf.com', 'e9b57e40e09b9b7e756dc8f3b34ea7d7f25e20104f322268b8e2c6ae92f970d77f272a9ce957b9a95d3fe63f0b762538492bce607076683443afd6baa9945bdb', '2018-04-28 20:05:00');
 
 --
@@ -131,7 +127,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `posts`

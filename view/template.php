@@ -11,7 +11,8 @@
 	
 	<body>
 		<?php  
-			include('view/modal.php');
+			include('view/signInModal.php');
+			include('view/signUpModal.php');
 			include('view/header.php');
 		?>
 		<?= $content ?>

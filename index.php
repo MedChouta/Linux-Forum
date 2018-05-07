@@ -11,6 +11,10 @@ try
 			listPosts();
 		}
 
+		elseif($_GET['page'] == 'ask'){
+			showForm();
+		}
+
 		elseif($_GET['page'] == 'addPost'){
 			if(!empty($_POST['author']) AND !empty($_POST['content']) AND !empty($_POST['title'])){
 				post($_POST['author'], $_POST['content'], $_POST['title']);
