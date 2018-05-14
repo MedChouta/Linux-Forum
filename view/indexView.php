@@ -22,7 +22,7 @@ while($data = $posts->fetch()){
 		<tr class="content">
 			<td class="topic"><a class="postLink" href="index.php?page=post&id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a></td>
 			<td class="category"><?= htmlspecialchars($data['category']) ?></td>
-			<td class="user">User</td>
+			<td class="user"><?php echo $data['author'] ?></td>
 			<td class="date"><?= htmlspecialchars($data['creation_date']) ?></td>
 		</tr>
 <?php

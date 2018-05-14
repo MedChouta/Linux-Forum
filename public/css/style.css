@@ -1,7 +1,10 @@
-<<<<<<< HEAD
 html,body{
 	margin: auto;
 	font-family: sans-serif;
+}
+
+p, td{
+	font-family: "Ubuntu";
 }
 
 /* NAVBAR */
@@ -9,7 +12,9 @@ html,body{
 header{
 	position: sticky;
 	top: 0px;
+	width: 100%;
 }
+
 #tux_img{
 	width: 3em;
 	height: 3em;
@@ -30,9 +35,9 @@ header{
 
 .sections{
 	display: flex;
-	width: 30%;
+	width: 20%;
 	justify-content: space-between;
-	margin-right: 5%;
+	margin-right: 10%;
 }
 
 li{
@@ -42,12 +47,17 @@ li{
 	font-size: 1.1em;
 }
 
+a{
+	text-decoration: none;
+	color: #eaecef;
+}
+
 li:hover:not(#tux-li){
 	border-bottom: 2px solid #eaecef;
 	cursor: pointer;
 }
 
-/* SignIn/LogIn */
+/* SignIn/LogIn/User */
 
 .sign{
 	display: flex;
@@ -73,6 +83,40 @@ li:hover:not(#tux-li){
 	font-weight: bold;
 	font-family: 'IBM Plex Mono';
 	border-bottom: 2px solid black;
+}
+
+#userPic{
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+}
+
+.User{
+	display: flex;
+	align-items: center;
+}
+
+.User p{
+	margin-left: 10px;
+	font-size: 1.2em;
+}
+
+.actions{
+	width: 25%;
+}
+
+.actions ul{
+	display: flex;
+	justify-content: space-around;
+	padding: 0;
+}
+
+.actions li, .actions a{
+	color: black;
+}
+
+.actions li:hover{
+	border-bottom: 2px solid black !important;
 }
 
 /* QUESTIONS */
@@ -129,6 +173,15 @@ th{
 #commentButton{
 	width: 10%;
 	margin-left: 3%;
+}
+
+.author{
+	display: flex;
+	align-items: center;
+}
+
+.author em{
+	padding-left: 20px;
 }
 
 /* MODAL */
@@ -447,5 +500,4 @@ input:focus:not(.submit){
 	float: right;
 	margin: 5px;
 	padding: 5px 10px;
->>>>>>> cb511146c09790ca590358c33a51453b109fd581
 }

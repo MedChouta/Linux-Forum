@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title><?= $title ?></title>
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" name="viewport" content="width=device-width">
 
 		<link rel="stylesheet" href="public/css/style.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -14,6 +14,7 @@
 			include('view/signInModal.php');
 			include('view/signUpModal.php');
 			include('view/header.php');
+
 		?>
 		<?= $content ?>
 		

@@ -5,6 +5,8 @@
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="public/css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+
 	</head>
 	<body>
 		<?php 			
@@ -26,12 +28,13 @@
 	<?php while($data = $comments->fetch()){ ?>
 
 		<div id='comment' class="blockPost">
-			<h3><?= htmlspecialchars($data['author']) ?></h3> <em><?= $data['creation_date']?></em>
+			<div class="author"><h3><?= htmlspecialchars($data['author']) ?></h3> <em><?= $data['creation_date']?></em></div>
 			<p><?= htmlspecialchars($data['content']) ?></p>
 		</div>
 
 	<?php
 	}
+	if(isset($_COOKIE['userName'])){
 	?>	
 			<form action="index.php?page=addComment&id=<?= $_GET['id'] ?>" method="post">
 				<p id="form">
@@ -43,8 +46,10 @@
 		</div>
 
 	<?php
+	}
 		$post->closeCursor();
 	?>
-
+		<script src="public/js/formTransition.js">
+		</script>
 	</body>
 </html>

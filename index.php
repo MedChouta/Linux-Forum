@@ -16,8 +16,8 @@ try
 		}
 
 		elseif($_GET['page'] == 'addPost'){
-			if(!empty($_POST['author']) AND !empty($_POST['content']) AND !empty($_POST['title'])){
-				post($_POST['author'], $_POST['content'], $_POST['title']);
+			if(!empty($_POST['content']) AND !empty($_POST['title'])){
+				post($_COOKIE['userName'], $_POST['content'], $_POST['title'], $_POST['category']);
 			}
 			else{
 				throw new Exception('You need to fill all the inputs');
@@ -32,6 +32,19 @@ try
 			}
 		}
 
+		elseif($_GET['page'] == 'signIn'){
+			if(!empty($_POST['email']) AND !empty($_POST['password'])){
+				signIn($_POST['email'],$_POST['password']);
+			}
+			else{
+				throw new Exception('You need to fill all the inputs');
+			}
+		}
+
+		elseif($_GET['page'] == 'logout'){
+			logout();
+		}
+
 		elseif(isset($_GET['id']) AND $_GET['id'] > 0){
 
 			if($_GET['page'] == 'post'){
@@ -39,8 +52,8 @@ try
 			}
 
 			elseif($_GET['page'] == 'addComment'){
-				if(!empty($_POST['author']) AND !empty($_POST['content'])){
-					postComment($_GET['id'], $_POST['author'], $_POST['content']);
+				if(!empty($_POST['content'])){
+					postComment($_GET['id'], $_COOKIE['userName'], $_POST['content']);
 				}
 				else{
 					throw new Exception('You need to fill all the inputs');
